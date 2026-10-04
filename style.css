@@ -1,0 +1,510 @@
+:root{
+    --bg:#111315;
+    --panel:#181b20;
+    --panel2:#22262d;
+    --border:#343a44;
+
+    --text:#e8e8e8;
+    --text2:#9da3ad;
+
+    --accent:#3d8cff;
+    --green:#35b56b;
+    --red:#d95353;
+    --yellow:#d8b34d;
+}
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+body{
+
+    background:#0d0f11;
+
+    color:var(--text);
+
+    font-family:
+        Segoe UI,
+        Arial,
+        sans-serif;
+
+    padding:25px;
+}
+
+
+.container{
+
+    max-width:1400px;
+
+    margin:auto;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+}
+
+
+/* ===== Шапка ===== */
+
+
+header{
+
+    background:var(--panel);
+
+    border:1px solid var(--border);
+
+    padding:20px;
+
+}
+
+
+header h1{
+
+    font-size:32px;
+
+    margin-bottom:8px;
+}
+
+
+header p{
+
+    color:var(--text2);
+
+    line-height:1.5;
+}
+
+
+
+/* ===== Блоки ===== */
+
+
+.input-section,
+.errors-section,
+.results-section{
+
+    background:var(--panel);
+
+    border:1px solid var(--border);
+
+    padding:18px;
+}
+
+
+
+/* ===== Заголовки ===== */
+
+
+label{
+
+    display:block;
+
+    margin-bottom:10px;
+
+    font-size:18px;
+
+    font-weight:600;
+}
+
+
+
+/* ===== Поле ввода ===== */
+
+
+textarea{
+
+    width:100%;
+
+    height:420px;
+
+    resize:vertical;
+
+
+    background:#101214;
+
+    color:#eaeaea;
+
+
+    border:1px solid #3b424d;
+
+
+    padding:14px;
+
+
+    font-size:14px;
+
+    font-family:
+        Consolas,
+        monospace;
+
+
+    outline:none;
+}
+
+
+textarea:focus{
+
+    border-color:var(--accent);
+
+}
+
+
+
+/* ===== Кнопки ===== */
+
+
+.buttons{
+
+    display:flex;
+
+    gap:12px;
+
+    margin-top:30px;
+
+}
+
+
+button{
+
+    border:1px solid transparent;
+
+    cursor:pointer;
+
+    color:white;
+
+    padding:10px 20px;
+
+
+    font-size:15px;
+
+    font-weight:600;
+
+
+    transition:.15s;
+}
+
+
+button:hover{
+
+    filter:brightness(1.15);
+
+}
+
+
+#calculateBtn{
+
+    background:#207342;
+
+    border-color:#299653;
+}
+
+
+#clearBtn{
+
+    background:#454b55;
+
+    border-color:#626975;
+}
+
+
+#copyBtn{
+
+    background:#454b55;
+
+    border-color:#626975;
+}
+
+
+
+/* ===== Ошибки ===== */
+
+
+.errors-section h2{
+
+    margin-bottom:12px;
+
+}
+
+
+.error-box{
+
+    min-height:120px;
+
+    max-height:350px;
+
+    overflow-y:auto;
+
+
+    background:#101214;
+
+
+    border:1px solid var(--border);
+
+
+    padding:10px;
+}
+
+
+
+.error{
+
+    color:#ffaaaa;
+
+
+    background:#211719;
+
+
+    border-left:3px solid var(--red);
+
+
+    padding:8px;
+
+
+    margin-bottom:6px;
+
+}
+
+
+
+.success{
+
+    color:#91e3aa;
+
+
+    background:#14251b;
+
+
+    border-left:3px solid var(--green);
+
+
+    padding:8px;
+}
+
+
+
+/* ===== Результаты ===== */
+
+
+.result-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:12px;
+}
+
+#totalPlayers{
+
+    color:var(--text2);
+
+}
+
+.result-buttons{
+
+    margin-top:60px;
+
+    display:flex;
+
+    justify-content:flex-end;
+
+}
+
+/* ===== Таблица ===== */
+
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+
+
+thead{
+
+    background:#252a32;
+
+}
+
+
+
+th{
+
+    padding:12px;
+
+    border:1px solid var(--border);
+
+
+    text-align:center;
+
+
+    font-size:15px;
+
+}
+
+
+
+td{
+
+    padding:10px;
+
+
+    border:1px solid var(--border);
+
+
+    text-align:center;
+
+
+    font-size:14px;
+
+}
+
+
+
+tbody tr:nth-child(even){
+
+    background:#15181c;
+
+}
+
+
+
+tbody tr:hover{
+
+    background:#20252d;
+
+}
+
+
+
+.placeholderRow td{
+
+    color:#777;
+
+    padding:30px;
+
+}
+
+
+
+/* ===== Цвета данных ===== */
+
+
+.idCell{
+
+    font-weight:bold;
+
+    color:#67a8ff;
+
+}
+
+
+.scoreCell{
+
+    color:#76db91;
+
+}
+
+
+.leadCell{
+
+    color:#e4c15a;
+
+}
+
+
+.mouseCell{
+
+    color:#e88ab7;
+
+}
+
+
+
+/* ===== Скролл ===== */
+
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+
+::-webkit-scrollbar-track{
+
+    background:#111;
+
+}
+
+
+::-webkit-scrollbar-thumb{
+
+    background:#414750;
+
+}
+
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#59616d;
+
+}
+
+
+
+/* ===== Мобильная версия ===== */
+
+
+@media(max-width:900px){
+
+    body{
+
+        padding:10px;
+
+    }
+
+
+    textarea{
+
+        height:300px;
+
+    }
+
+
+    .buttons{
+
+        flex-direction:column;
+
+    }
+
+
+    button{
+
+        width:100%;
+
+    }
+
+
+    .result-header{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:8px;
+
+    }
+
+}
+
