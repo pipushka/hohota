@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Считалка отчётов</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <header>
+        <h1>🦴 Считалка отчётов</h1>
+        <p>
+            Вставьте комментарии целиком и нажмите
+            <b>«Подсчитать»</b>.
+        </p>
+    </header>
+
+    <section class="input-section">
+
+        <label for="reports">
+            Отчёты
+        </label>
+
+        <textarea
+                id="reports"
+                placeholder="Вставьте сюда комментарии..."
+                spellcheck="false"></textarea>
+
+        <div class="buttons">
+
+            <button id="calculateBtn">
+                Подсчитать
+            </button>
+
+            <button id="clearBtn">
+                Очистить
+            </button>
+
+        </div>
+
+    </section>
+
+    <section class="errors-section">
+
+        <h2>
+            ⚠ Ошибки
+        </h2>
+
+        <div id="errors" class="error-box">
+
+            <div class="placeholder">
+                Ошибок пока нет.
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="results-section">
+
+        <div class="result-header">
+
+            <h2>
+                📊 Результаты
+            </h2>
+
+            <span id="totalPlayers">
+                Игроков: 0
+            </span>
+
+        </div>
+
+        <table id="resultsTable">
+
+            <thead>
+
+            <tr>
+
+                <th>ID</th>
+
+                <th>Баллы за дичь</th>
+
+                <th>Ведения</th>
+
+                <th>Баллы за мышей</th>
+
+            </tr>
+
+            </thead>
+
+            <tbody id="resultsBody">
+
+            <tr class="placeholderRow">
+
+                <td colspan="4">
+                    Пока нет данных.
+                </td>
+
+            </tr>
+
+            </tbody>
+
+        </table>
+
+         <button id="copyBtn">
+                Копировать результат
+            </button>
+        
+    </section>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
+
