@@ -350,8 +350,8 @@ if(/Название команды:/i.test(text))
     //------------------------------------
     // Вид
     //------------------------------------
-   const dateMatch =
-    text.match(/Дата:\s*\*?(\d{2}\.\d{2}\.\d{2,4})/i);
+const dateMatch =
+    text.match(/Дата:\s*\*?(\d{1,2}\.\d{1,2}(?:\.\d{2,4})?)/i);
 
 
 if(!dateMatch)
@@ -364,13 +364,23 @@ if(!dateMatch)
 let reportDate = dateMatch[1];
 
 
-// Если год короткий, превращаем в полный
+// Если год не указан — ставим текущий год
 let parts = reportDate.split(".");
 
+if(parts.length === 2)
+{
+    parts.push(String(new Date().getFullYear()));
+}
+
+// Если год короткий — превращаем в полный
 if(parts[2].length === 2)
 {
     parts[2] = "20" + parts[2];
 }
+
+// Приводим день и месяц к формату 01.09.2026
+parts[0] = parts[0].padStart(2, "0");
+parts[1] = parts[1].padStart(2, "0");
 
 reportDate = parts.join(".");
     checkFutureDate(
